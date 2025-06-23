@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
+import { getFullImageUrl } from "../../utils/getFullImageUrl";
 
 const ProfileInfoCard = () => {
     const { user, clearUser } = useContext(UserContext)
@@ -11,13 +12,14 @@ const ProfileInfoCard = () => {
         clearUser();
         navigate("/");
     }
+
     return (
         user && (
-            <div className="flex items-center ">
+            <div className="flex items-center">
                 <img
-                    src={user.profileImageUrl}
-                    alt=""
-                    className="w-13 h-13 bg-gray-300 rounded-full mr-3"
+                    src={getFullImageUrl(user.profileImageUrl)}
+                    alt="profile"
+                    className="w-13 h-13 bg-gray-300 rounded-full mr-3 object-cover"
                 />
                 <div>
                     <div className="text-[20px] text-black font-bold leading-3">
@@ -35,4 +37,4 @@ const ProfileInfoCard = () => {
     )
 }
 
-export default ProfileInfoCard
+export default ProfileInfoCard;
