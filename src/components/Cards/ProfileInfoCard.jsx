@@ -13,6 +13,9 @@ const ProfileInfoCard = () => {
         navigate("/");
     }
 
+    console.log("Profile Image URL:", user.profileImageUrl);
+
+
     return (
         user && (
             <div className="flex items-center">
