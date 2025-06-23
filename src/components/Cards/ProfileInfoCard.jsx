@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
-import  getFullImageUrl from "../../utils/getFullImageUrl";
+import  {getFullImageUrl} from "../../utils/getFullImageUrl";
 
 const ProfileInfoCard = () => {
     const { user, clearUser } = useContext(UserContext)
